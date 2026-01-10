@@ -100,6 +100,10 @@ for iter in range(iterations):
     if iter % 20 == 0:
         print(f"Iteration {iter}: Cost {cost_value:0.1f}")
 
+# Save the trained tensors to disk
+np.save('W.npy', W.numpy())
+np.save('X.npy', X.numpy())
+np.save('b.npy', b.numpy())
 
 p = np.matmul(X.numpy(), np.transpose(W.numpy())) + b.numpy()
 
